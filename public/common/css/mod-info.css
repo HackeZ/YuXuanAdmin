@@ -1,0 +1,174 @@
+.redbtn,.whitebtn-new{
+    font-size: 16px;
+}
+.stepwrap
+{
+    font-size: 0;
+
+    margin-bottom: 40px;
+    padding: 0 15px;
+
+    text-align: center;
+}
+.stepwrap div
+{
+    display: inline-block;
+
+    vertical-align: middle;
+
+    *display: inline;
+    *zoom: 1;
+}
+.greenbg
+{
+    background: #4bbd0d;
+}
+.graybg
+{
+    background: #c6c6c6;
+}
+.smalldot
+{
+    position: relative;
+    z-index: 100;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 6px;
+}
+.bigdot
+{
+    position: relative;
+    z-index: 100;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 10px;
+}
+.normalline
+{
+    width: 40%;
+    height: 6px;
+    margin: 0 -1px;
+    /*border-radius: 3px;*/
+}
+
+#phone-valid
+{
+    padding: 0 15px;
+}
+.current-info
+{
+    padding-bottom: 20px;
+    font-size: 16px;
+    color: #919191;
+}
+.current-info.changenew{
+    text-align: center;
+}
+.a6{
+    color: #6a6a6a;
+    font-size: 18px;
+}
+
+.smalldot,
+.bigdot
+{
+    position: relative;
+}
+.step-text
+{
+    font-size: 13px;
+
+    position: absolute;
+    top: -24px;
+    left: -29px;
+
+    width: 70px;
+
+    text-align: center;
+
+    color: #919191;
+}
+.bigdot .step-text
+{
+    top: -20px;
+    left: -25px;
+}
+.greenbg .step-text
+{
+    color: #4bbd0d;
+}
+
+.success{
+    width: 62px;
+    height: 62px;
+    margin:80px auto 20px;
+    margin-bottom: 0;
+    background: url(../../images/success.png) no-repeat;
+}
+.login{
+    width: 320px;
+    margin: auto;
+}
+.wechat,.qq,.weibo{
+    width: 27px;
+    height: 27px;
+    vertical-align: middle;
+    margin-right: 15px;
+    border-radius: 14px;
+    display: inline-block;
+}
+.wechat{
+    margin-left: 15px;
+    background: url(../../images/smalllogo.png) no-repeat 0 -160px;
+}
+.wechat:hover{
+    background-position: 0 0;
+}
+.qq{
+    background: url(../../images/smalllogo.png) no-repeat 0 -204px;
+}
+.qq:hover{
+    background-position: 0 -38px;
+}
+.weibo{
+    background: url(../../images/smalllogo.png) no-repeat 0 -116px;
+}
+.weibo:hover{
+    background-position: 0 -76px;
+}
+.forget{
+    line-height: 27px;
+}
+.indexlogo{
+    margin-bottom: 45px;
+}
+
+.login-head h3{
+    font-size: 24px;
+    color: #2d2c2c;
+}
+.login-head .tips{
+    font-size: 13px;
+    line-height: 35px;
+    margin-bottom: 30px;
+}
+
+.caret{
+    margin-left: 5px;
+    border-right: 0;
+    margin-right: -5px;
+    vertical-align: baseline;
+    border-left: 5px dashed;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+.login-wrap{
+    padding-top: 50px;
+}
+.login-title {
+    text-align: center;
+}

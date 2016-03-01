@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+	.container.wrap
+		.formwrap.logo-wrap
+			.login-head.text-center
+				.indexlogo
+					img(src="/images/logo.png", alt)
+
+				h3 #{title}
+				.tips Make By HackerZ
+			form(class="login",method="POST",onsubmit="return false")
+				.formitem.hasbg.cf
+					input(type="text", placeholder="输入管理员账号", class="fl", maxlength="50", name="user-id")
+					span.icon-user
+					.wrongwrap.fl
+						.leftborder.fl
+						.wrongmsg.fl
+				.formitem.hasbg.cf
+					input(type="password", placeholder="输入管理员密码", class="fl", maxlength="16", name="password")
+					span.iconlock
+					.wrongwrap.fl
+						.leftborder.fl
+						.wrongmsg.fl
+				//- 验证码（暂时不做）
+				.formitem
+					button(class="redbtn", id="login", data-url="/login/doLogin") 立即登陆
+
+			#footer.loginfoot
+				p.tips © 朱建洪 版权所有
+
+		script(src="/common/js/login.js")

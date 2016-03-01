@@ -1,0 +1,77 @@
+extends ../layout
+
+block content
+	//- loading CSS 样式
+	link(type="text/css",rel="stylesheet",href="/common/css/home.css")
+	//- loading JS 效果
+	script(type="text/javascript", src="/common/js/home.js")
+	script(type="text/javascript", src="/common/js/clickJumpTo.js")
+
+	header(role="banner",class="navbar navbar-inverse navbar-fixed-top frame-top")
+		div.navbar-header
+			a(class="navbar-brand",href="#") 御轩寝饰
+
+		//- 用户头像信息
+		ul(style="float: right; margin-right: 70px; margin-top: 8px")
+			li.dropdown.user
+
+				a(data-toggle="dropdown",class="dropdown-toggle",href="#")
+					img(src="/images/user_img.jpg",width="35",height="35",alt="")
+					span.username HackerZ
+					span.username ▽
+					i.icon-angle-down
+
+				ul.dropdown-menu
+					li
+						a.btn-change-password(href="#") 更改密码
+					li.divder
+					li
+						a(href="#") 退出登录
+
+	div.row(style="width:100%")
+		div.col-md-2(style="width: 20%")
+			aside.sidebar
+				nav.sidebar-nav
+					ul#menu
+						li
+							a.btn-stair(href="#") 首页
+							ul
+								li.active.home
+									a.info-integration(href="#1")
+										span.sidebar-nav-item 御轩寝饰
+						li
+							a.btn-stair(href="#") 用户管理
+							ul
+								li
+									a.btn-manager-user(href="#2")
+										span.sidebar-nav-item 查看可登录用户
+								li
+									a.btn-add-user
+										span.sidebar-nav-item 添加新用户
+						li
+							a.btn-stair(href="#") 产品管理
+							ul
+								li
+									a.btn-manager-nav(href="#3")
+										span.sidebar-nav-item 产品分类
+								li
+									a.btn-manager-product(href="#4")
+										span.sidebar-nav-item 查看产品列表
+						li
+							a.btn-stair(href="#") 库存管理
+							ul
+								li
+									a.btn-manager-inventory(href="#5")
+										span.sidebar-nav-item 查看库存
+								li
+									a.btn-add-inventory(href="#6")
+										span.sidebar-nav-item 新到货 添加库存
+						li
+							a.btn-stair(href="#") 财务管理
+							ul
+
+
+
+		div.col-md-9.content-info(style="width: 80%")
+			p 这是加载内容的页面
+		hr

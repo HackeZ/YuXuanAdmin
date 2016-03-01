@@ -1,0 +1,49 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport')
+
+		script(type="text/javascript", src="common/js/users.js")
+	body
+		block content
+			div.row.title(style="margin-top: 20px;padding: 15px")
+				div.col-md-12
+					h3.page-title
+						span.glyphicon.glyphicon-user  #{title}
+
+			hr
+
+			div.row(style="margin-top: 20px;padding: 0 15px")
+				div.col-md-4
+					button#add-user.btn.btn-primary.btn-modify-day(type="button")
+						span.glyphicon.glyphicon-user  添加新用户
+
+			div#row(style="margin-top: 20px")
+				div.col-md-12
+					table.table.table-hover.table-bordered
+						thead
+							tr
+								th 用户名
+								th 登陆名
+								th 是否是超级管理员
+								th 注册时间
+								th 最后登陆时间
+								th 操作
+
+						//- 假数据测试
+						tbody
+							each item in users
+								tr(class="item-id-#{item._id}")
+									td #{item.userName}
+									td #{item.loginName}
+									td #{item.isAdmin}
+									td #{item.createTime}
+									td #{item.lastLoginTime}
+									td
+										span
+											a.btn.btn-xs.btn-primary.btn-modify-day.btn-update(type="button", data-url="/users/update/#{item._id}", href="javascript:;")
+												span 修改
+											a.btn.btn-xs.btn-danger.btn-del(type="button", target="_blank", data-id="#{item._id}")
+												span 删除
