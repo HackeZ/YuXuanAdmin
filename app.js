@@ -34,15 +34,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // session管理（必须要在 路由规则 前面，否则session一直未定义）
 app.use(session({
-  secret: config.session_secret,
-  store: new RedisStore({
-    host: config.redis_host,
-    port: config.redis_port,
-    pass: config.redis_pass,
-    ttl: 3600000 // 过期时间
-  }),
-  resave: true, // 如果没有这两句代码会报错
-  saveUninitialized: true
+ secret: config.session_secret,
+ store: new RedisStore({
+   host: config.redis_host,
+   port: config.redis_port,
+   pass: config.redis_pass,
+   ttl: 3600000 // 过期时间
+ }),
+ resave: true, // 如果没有这两句代码会报错
+ saveUninitialized: true
 }));
 
 

@@ -5,7 +5,7 @@
 	var url = window.location.href;
 
 	// 数据总结
-	$.custom.clickJumpTo(".info-integration", "#1");
+	//$.custom.clickJumpTo(".info-integration", "#1");
 
 	// 用户列表
 	$.custom.clickJumpTo(".btn-manager-user", "/users");
