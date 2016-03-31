@@ -4,9 +4,9 @@
 
 module.exports = {
 	// session 设置
-	session_secret: '12345', // session 密钥（12345用于测试）
+	session_secret: 'dnV0fiUef293kgfB5d69Dhawt33ejr7oE', // session 密钥(12345用于测试)
 	session_name: 'YuXuanAdmin',
-	session_failtime: 30 * 60 * 1000, // min * s * ms = 30 min
+	session_failtime: 0. * 60 * 1000, // min * s * ms = 30 min
 
 	// 数据库配置
 	URL: '',

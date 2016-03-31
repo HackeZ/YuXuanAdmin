@@ -16,12 +16,12 @@ router.post('/doLogin', function(req, res, next) {
 	if (req.body.username === "admin" && req.body.password === "admin") {
 		console.log("密码对了");
 		// session 信息
-		//req.session.adminLogined = true;
-		//req.session.adminInfo = 'admin';
+		req.session.adminLogined = true;
+		req.session.adminInfo = 'admin';
 
 		res.status(200).send({"status":1,"info":"正在跳转..."});
 	} else {
-		console.log("密码cuo了");
+		console.log("密码错了");
 		res.status(200).send({"status":-1,"info":"用户名或密码错误"});
 	}
 });

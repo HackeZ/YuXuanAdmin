@@ -10,7 +10,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 /* 引入相关路由 */
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var users = require('./routes/users');
 var home = require('./routes/home');
 var login = require('./routes/login');
@@ -33,13 +33,14 @@ app.use(cookieParser(config.session_secret));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // session管理（必须要在 路由规则 前面，否则session一直未定义）
+// Github: https://github.com/tj/connect-redis
 app.use(session({
  secret: config.session_secret,
  store: new RedisStore({
    host: config.redis_host,
    port: config.redis_port,
    pass: config.redis_pass,
-   ttl: 3600000 // 过期时间
+   ttl:  config.session_failtime // 过期时间
  }),
  resave: true, // 如果没有这两句代码会报错
  saveUninitialized: true
@@ -48,10 +49,11 @@ app.use(session({
 
 
 // 路由规则
-app.use('/', routes);
+app.use('/', index);
 app.use('/users', users);
 app.use('/home', home);
 app.use('/login', login);
+
 
 
 // catch 404 and forward to error handler

@@ -6,7 +6,7 @@ $(document).ready(function() {
     $.get_content = get_content;
 	jQuery.custom = {
 	   'clickJumpTo': clickJumpTo,
-        'get_content': get_content,
+                'get_content': get_content,
 	};
     console.log("跳转JS加载完毕");
 });
