@@ -40,6 +40,7 @@ app.use(session({
    host: config.redis_host,
    port: config.redis_port,
    pass: config.redis_pass,
+   prefix: "sess:HackerZ",
    ttl:  config.session_failtime // 过期时间
  }),
  resave: true, // 如果没有这两句代码会报错
@@ -62,6 +63,17 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+
+// handle lost connections to Redis
+app.use(function (req, res, next) {
+  if (!req.session) {
+    return next(new Error('oh no')) // handle error
+  }
+  next(); // otherwise continue
+});
+
+
 
 // error handlers
 
