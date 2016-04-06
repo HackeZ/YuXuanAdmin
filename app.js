@@ -55,6 +55,20 @@ app.use('/users', users);
 app.use('/home', home);
 app.use('/login', login);
 
+// Auth Controller
+function authentication(req, res, next) {
+  if (!req.session.adminLogined) {
+    return res.redirect('/login');
+  }
+  next();
+}
+function notAuthentication(req, res, next) {
+   if (req.session.user) {
+     return res.redirect('/home');
+   }
+   next();
+}
+
 
 
 // catch 404 and forward to error handler
@@ -98,6 +112,8 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
 
 
 module.exports = app;

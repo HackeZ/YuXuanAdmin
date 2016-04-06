@@ -1,6 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
+
+// handle Illegal landing
+router.use(function(req, res, next) {
+  // .. some logic here .. like any other middleware
+  if (typeof(req.session.adminInfo) == "undefined" ||
+    typeof(req.session.adminLogined) == "undefined") {
+    return res.redirect("/login");
+  }
+  next();
+});
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.render('users/user_list', {

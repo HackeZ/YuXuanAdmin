@@ -1,19 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
-/* Home Main Page */
-router.get('/', function(req, res, next) {
-	// handle Illegal landing
+// handle Illegal landing
+router.use(function(req, res, next) {
 	if (typeof(req.session.adminInfo) == "undefined" ||
 		typeof(req.session.adminLogined) == "undefined") {
-		res.redirect("/login");
-	} else{
-		res.render('Home', {
-    		title: "YuXuanAdmin",
-        	username: "test",
-        	password: "test"
-    	})
+		return res.redirect("/login");
 	}
+	next();
+});
+
+/* Home Main Page */
+router.get('/', function(req, res, next) {
+	res.render('Home', {
+		title: "YuXuanAdmin",
+    	username: "test",
+    	password: "test"
+	})
 });
 
 /* Logout Success */
