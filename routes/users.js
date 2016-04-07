@@ -1,5 +1,17 @@
 var express = require('express');
 var router = express.Router();
+var url = require('url');
+
+// Admin
+var AdminUser = require("../models/AdminUser");
+
+// shortid
+var shortid = require('shortid');
+// config
+var setting = require("../models/db/config");
+// MongoDB Connect
+var DbOpt = require("../models/db/Dbopt");
+
 
 
 // handle Illegal landing
@@ -12,8 +24,12 @@ router.use(function(req, res, next) {
   next();
 });
 
-/* GET users listing. */
+
+
+        /*********** GET ***********/
+
 router.get('/', function(req, res, next) {
+  /* GET users listing. */
   res.render('users/user_list', {
   	title: "用户列表",
   	users: [{
@@ -42,6 +58,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/add', function(req, res, next) {
+  /*** TEST SUCCESS ***/
+  // var testAdmin = {
+  //   userName: "hackerz",
+  //   loginName: "HZ",
+  //   password: "lovezhu123",
+  //   phoneNum: 13232212086,
+  //   isAdmin: "1"
+  // };
+  // req.body = testAdmin;
+  // DbOpt.addOne(AdminUser,req,res);
+  /*** TEST SUCCESS ***/
 	res.render('users/user_add', {
 		title: '添加新用户',
 	});
@@ -57,7 +84,15 @@ router.get('/update/:id', function(req, res, next) {
 	// req.param._id 在数据库中获取该 id 的数据并渲染
 });
 
-router.post('/update',function(req, res, next) {
+
+        /*********** POST ***********/
+
+router.post('/addUser', function(req, res, next) {
+  // Add A AdminUser
+});
+
+
+router.post('/update', function(req, res, next) {
 	// 保存用户数据
 });
 

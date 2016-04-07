@@ -13,16 +13,24 @@ var AdminUserSchema = new Schema({
 		unique: true,
 		'default': shortid.generate
 	},
-	name: String,
 	userName: String,
-	password: String,
-	phoneNum: String,
+	loginName: String,
+	password: {
+		type: String,
+		'default': '123456'
+	},
+	phoneNum: Number,
+	isAdmin: String,
 	date: {
 		type: Date,
 		default: Date.now
+	},
+	logo: {
+		type: String,
+		default: "/upload/images/defaultlogo.png"
 	}
 });
 
 var AdminUser = mongoose.model("AdminUser", AdminUserSchema);
 
-model.exports = AdminUser;
+module.exports = AdminUser;
